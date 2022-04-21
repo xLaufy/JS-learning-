@@ -1,71 +1,59 @@
-// unshift, shift, push, pop
+const numbers = [0, 0, 1, 1, 2, 2, 2]
+const colors = ['red', 'green', 'blue', true, 123]
+const cars = [123, true, 'audi', 'bmw', 'mercedes', 'ferrari', '🤷‍♂️', '👀']
 
-const numbers = [1, 2, 3, 4, 5]
+const numbers2 = numbers.slice(0, 2)
+console.log(numbers2)
 
-console.log(numbers)
+const numbers3 = numbers.slice(-3)
+console.log(numbers3)
 
-numbers.unshift(-1, 0)
-
-console.log(numbers)
-
-numbers.shift()
-console.log(numbers)
-
-const colors = ['red', 'green', 'blue']
+const randomStuff = colors.splice(-2)
 console.log(colors)
+console.log(randomStuff)
 
-colors.push('gold')
-console.log(colors)
+const newCars = cars.splice(2, 4, 'test')
+console.log(cars)
+console.log(newCars)
 
-colors.pop()
-console.log(colors)
+const letters = ['c', 'd']
 
-const things = [1, 'rod', 'wow', 4]
-console.log(things)
+letters.unshift('a', 'b')
+console.log(letters)
+letters.push('e', 'f')
+console.log(letters)
+console.log(letters.includes('c'))
 
-things.unshift('lol', 'yo')
-console.log(things)
+const numbers4 = [0, 1, 2, 3, 4, 5]
+const food = ['cupcakes', 'soup', 'omlet']
 
-things.shift()
-console.log(things)
+const array = numbers4.concat(food)
+console.log(array)
+const array2 = [...numbers4, ...food]
 
-things.push('lol')
-console.log(things)
+console.log(array)
 
-things.pop()
-console.log(things)
+const array3 = [1, 5, 13, 26, 48]
 
-console.log('--------------------------------------------')
+const map1 = array3.map(x => x * 5)
 
-// map, contact, spread, rest operator
+console.log(map1)
 
-const arr = [1, 2, 3, 4, 5]
-
-function multiply(x) {
-	return x * 2
+for (const x of map1) {
+	if (x % 2 === 0) {
+		console.log(`Liczba parzysta: ${x}`)
+	} else {
+		console.log(`Liczba nieparzysta: ${x}`)
+	}
 }
 
-// MAP
+// for of lepszy, ale można jeszcze tak : 
 
-const newNumbers = numbers.map(multiply)
-console.log(numbers);
-console.log(newNumbers);
-
-console.log('--------------------------------------------')
-;
-// CONCAT 
-
-const abc = ['a', 'b', 'c']
-
-const newAbc = numbers.concat(6,7,8, true, abc)
-console.log(newAbc);
-
-// SPREAD (...)
-
-const drinks = ['kawa', 'pepsi', 'sok']
-
-const meals = ['schabowy', 'spaghetti', 'zupa']
-
-const menu = [...drinks, ...meals]
-console.log(menu);
-
+// for (let i = 0; i < map1.length; i++) {
+// 	if (map1[i] % 2 === 0) {
+// 		i++
+// 		console.log(`Liczba parzysta: ${map1[i]}`)
+// 	} else {
+// 		console.log(`Liczba nieparzysta: ${map1[i]}`)
+// 	}
+// }

@@ -47,7 +47,7 @@ for (const x of map1) {
 	}
 }
 
-// for of lepszy, ale można jeszcze tak : 
+// for of lepszy, ale można jeszcze tak :
 
 // for (let i = 0; i < map1.length; i++) {
 // 	if (map1[i] % 2 === 0) {
@@ -57,3 +57,33 @@ for (const x of map1) {
 // 		console.log(`Liczba nieparzysta: ${map1[i]}`)
 // 	}
 // }
+
+const color1 = ['green']
+console.log(color1)
+color1.unshift('red')
+color1.push('blue')
+console.log(color1)
+
+// charAt i slice aby zmienić pierwszą literę kazdego elementu w tablicy na uppercase
+for (let i = 0; i < color1.length; i++) {
+	console.log(`Mój ulubiony kolor to: ${color1[i].charAt(0).toUpperCase() + colors[i].slice(1)}`)
+}
+
+// zmiana pierwszych liter elementow w tablicy na uppercase v2
+const color2 = color1.map(word => word[0].toUpperCase() + word.substring(1))
+console.log(color2)
+
+
+
+const cars1 = 'Audi, Mercedes, BMW, Nissan, Dodge'
+const cars2 = cars1.split (', ');
+
+cars1.length > 3 ? console.log('Jest OK'): console.log('Nie jest Ok');
+
+
+if (cars2.includes('Audi')) {
+	cars2.push('Fiat'); 
+} else {
+	cars2.pop()
+}
+console.log(cars2);

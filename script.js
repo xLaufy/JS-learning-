@@ -1,91 +1,43 @@
-
-// // FUNKCJE 
-
-
-// // deklaracja funkcji
-
-// function test() {
-// 	console.log('czesc');
-// }
-// test()
-
-// // wyrazenie funkcyjne
-
-// const helloWorld = function(){
-// 	console.log('czesc! 123')
-// }
-
-// helloWorld()
-
-
-// // funkcja z argumentami
-
-// function add(x, y) {
-// 	return x + y
-// }
-// add (5, 3)
-
-// //  zadanie 
-
-// function ex(name, age ) {
-// 	console.log(`Cześć, mam na imię ${name} i mam ${age} lat `);
-// }
-// ex ('Jakub', 49)
-
-
-// // Funkcje anonimowe 
-
-// const heading = document.querySelector('h1')
-
-//  function test() {
-// 	console.log('kliknięto mnie')}
-
-
-// heading.addEventListener('click', test)
-
-
-// Funkcje strzałkowe 
-
-const arrowFunction = () => {
-	// tak wygląda funkcja strzałkowa
+const hello = (name = 'drogi użytkowniku') => {
+	console.log(`Cześć ${name}, jak się masz.`)
 }
 
-function test(name) {
-	console.log(`Mam na imię ${name}`)
+hello()
+hello('Klaudia')
+
+function hello2(name = 'drogi użytkowniku') {
+	console.log(`Cześć ${name}, jak się masz?`)
+}
+hello2()
+
+const add = (x = 5, y = 10) => {
+	console.log(x + y)
+	//  wywołanie funkcji u dołu z wartością nadpisuje x = 5 na x = 10
+}
+add(10)
+
+const arr = [1, 2, 3, 4]
+console.log(arr)
+console.log(...arr)
+
+// REST
+
+const numbers = (x, y, ...z) => {
+	console.log(x, y, z)
 }
 
-test('Klaudia')
+numbers(13, 468, 468, 4, 98133, 2, 1, 13, 3, 1)
 
-const test2 = name => {
-	console.log(`Mam na imię ${name}`);
+
+
+// ZAKRESY 
+
+const name1 = 'Lisa'
+
+const test = () => {
+	console.log(`NAME w funkcji - ${name1}`);
+	
 }
+test()
 
-test2('Lisa')
-
-
-const test3 = name => console.log(`Mam na imię ${name}`);
-test3('qwerty')
-
-const test4 = (name, age) => console.log(name, age);
-test4('name', 123)
-
-function add(num1, num2)
-{
-	return num1 * num2
-}
-
-const add2 = (num1, num2) => {
-	console.log('cześć');
-	return num1 * num2
-}
-
-
-const days = ['monday', 'tuesday', 'wednesday']
-const days2 = days.forEach(function(day) {
-	console.log(day);
-});
-
-console.log('-----------');
-
-// łatwiejszy przykład z powyżej 
-const days3 = days.forEach(day => console.log(day))
+console.log(`NAME w funkcji - ${name1}`);

@@ -1,107 +1,84 @@
-const text1 = 'powieksz mnie'
-const text2 = 'ZAPISZ MNIE MALYMI LITERAMI'
-const text3 = '$#%#^ wytnij te dziwne znaki na poczatku'
-const text4 = 'sprawdz, czy zawieram slowo "czy"'
-const text5 = 'wyLoguj w konsoli tylko literke "L", która znajude sie w wyrazie "Wyloguj"'
-const text6 = 'pies zamien kazde slowo pies na slowo kot pies'
-const text7 = 'podziel, ten, string, od, przecinkow'
+// PETLA FOR
 
-console.log(text1.toUpperCase())
-console.log(text2.toLowerCase())
-console.log(text3.slice(6))
-console.log(text4.includes('czy'))
-console.log(text5.charAt(2))
-console.log(text6.replaceAll('pies', 'kot'))
-console.log(text7.split(','))
+const colors = ['blue', 'red', 'green', 'orange']
 
-// operatory logiczne
-
-// && - i
-// || - lub
-// ! - zaprzeczenie
-
-if (true && false) {
-	console.log(true)
-} else {
-	console.log(false)
+for (let i = 0; i < colors.length; i++) {
+	console.log(colors[i])
 }
 
-// IF, ELSE, IF\ELSE
+console.log('===============')
+// PETLA WHILE
 
-const pass = '!qwerty'
-
-if (pass.length > 10 && pass.includes('!')) {
-	console.log('masz dobre hasło')
-} else if (pass.length < 10) {
-	console.log('masz za krotkie haslo')
-} else {
-	console.log('za krotkie haslo')
+let i = 0
+while (i < 5) {
+	console.log(i)
+	i++
 }
 
-// ZADANIE Z IF
+console.log('===============')
+// DO WHILE
 
-let x = 50
-let y = 60
+let a = 0
+do {
+	a++
+	console.log(a)
+} while (a < 2)
 
-if (x > y) {
-	console.log(`${x} jest większe niż ${y}`)
-}
+console.log('===============')
 
-// zadanie 2 z if
+// PETLA FOR OF
+const numbers = [1, 2, 3, 4, 5]
 
-let color = 'blue'
-let newColor = 'green'
-if (color === newColor) {
-	console.log('kolory sie zgadzaja')
-} else {
-	console.log('kolory sie nie zgadzaj')
-}
-
-// zadanie nr 3
-
-let q = 100
-let w = 50
-
-if (q > w) {
-	console.log('q > w')
-} else if (q === w) {
-	console.log('q = w')
-} else if (q < w) {
-	console.log('q < w')
-}
-
-// zadanie 4
-
-let e = 10
-
-let check = e % 2 === 0 ? 'e jest parzyste' : 'e jest nieparzyste'
-console.log(check)
-// if (e%2==0){
-//     console.log('e jest parzyste');
-// } else {
-//     console.log('e jest nieparzyste');
+// for (let i = 0; i < numbers.length; i++) {
+// 	console.log(numbers[i] * 2)
 // }
 
-// zadanie 5
-
-let a = 50
-
-if (a >= 100) {
-	console.log('a>100'.toUpperCase())
-} else if (a < 100 && a>30) {
-	console.log('a jest sredniakiem'.toUpperCase())
-} else {
-	console.log('a jest małe'.toUpperCase())
+for (const number of numbers) {
+	console.log(number * 2)
 }
 
-//  lepsze rozwiazanie :
-// let a = 50
-// let text
+console.log('===============')
 
-// if (a >= 100) {
-// 	text ='a>100'
-// } else if (a < 100 && a>30) {
-// 	text ='a jest średniakiem'
-// } else {
-// 	text ='a jest małe'}
-// console.log(text.toUpperCase());
+// ZADANIE z petli for
+
+const cities = ['wawa', 'wroclaw', 'paris', 'barcelona']
+
+for (let q = 0; q < cities.length; q++) {
+	console.log(`to miasto nazywa sie ${cities[q]}`)
+}
+console.log('===============')
+
+// zadanie petla while
+
+let x = 0
+
+while (x < 10) {
+	x += 2
+	console.log(x)
+}
+
+console.log('===============')
+// ZADANIE do... while
+
+let z = 20
+
+do {
+	z -= 3
+} while (z > 0)
+console.log(z)
+
+// ZADANIE Z FOR OF
+
+const arrays = [5, 8, 10, 23, 48, 60]
+
+for (const array of arrays) {
+	console.log(array / 5)
+}
+
+for (const array of arrays) {
+	if (array % 2 === 0) {
+		console.log(`%c liczba ${array} jest parzysta`, 'background-color:yellow')
+	} else {
+		console.log(`%c liczba ${array} jest nieparzysta`, 'background-color:tomato')
+	}
+}

@@ -1,84 +1,59 @@
-// PETLA FOR
+// ARRAYS
 
-const colors = ['blue', 'red', 'green', 'orange']
-
-for (let i = 0; i < colors.length; i++) {
-	console.log(colors[i])
-}
-
-console.log('===============')
-// PETLA WHILE
-
-let i = 0
-while (i < 5) {
-	console.log(i)
-	i++
-}
-
-console.log('===============')
-// DO WHILE
-
-let a = 0
-do {
-	a++
-	console.log(a)
-} while (a < 2)
-
-console.log('===============')
-
-// PETLA FOR OF
 const numbers = [1, 2, 3, 4, 5]
+console.log(numbers)
 
-// for (let i = 0; i < numbers.length; i++) {
-// 	console.log(numbers[i] * 2)
-// }
+numbers.unshift(-1, 0)
 
-for (const number of numbers) {
-	console.log(number * 2)
+console.log(numbers)
+
+numbers.shift()
+console.log(numbers)
+
+// unshift - dodaje elementy na początku tablicy
+// shift - usuwa element z indeksem 0
+
+const colors = ['red', 'blue', 'green']
+console.log(colors)
+colors.push('gold', 123)
+console.log(colors)
+
+colors.pop()
+console.log(colors)
+
+// push-dodaje elementy na końcu tablicy
+// pop - usuwa ostatni element z tablicy
+
+// Metody
+
+const nums = [1, 2, 3, 4, 5]
+
+function multiply(x) {
+	return x * 2
 }
 
-console.log('===============')
+multiply(2)
 
-// ZADANIE z petli for
+const newNums = nums.map(multiply)
+console.log(nums)
+console.log(newNums)
+console.log('============================');
+// EXERCICES
 
-const cities = ['wawa', 'wroclaw', 'paris', 'barcelona']
+const numbers1 = [0, 0, 1, 1, 2, 2, 2]
+const colors1 = ['red', 'green', 'blue', true, 123]
+const cars = [123, true, 'audi', 'bmw', 'mercedes', 'ferrari', '🤷‍♂️', '👀']
 
-for (let q = 0; q < cities.length; q++) {
-	console.log(`to miasto nazywa sie ${cities[q]}`)
-}
-console.log('===============')
+const numbers2 = numbers1.slice(0,2)
+console.log(numbers2)
 
-// zadanie petla while
+const numbers3 = numbers1.slice(-3)
+console.log(numbers3)
 
-let x = 0
+const randomStuff = colors1.splice(-2)
 
-while (x < 10) {
-	x += 2
-	console.log(x)
-}
+console.log(randomStuff)
 
-console.log('===============')
-// ZADANIE do... while
-
-let z = 20
-
-do {
-	z -= 3
-} while (z > 0)
-console.log(z)
-
-// ZADANIE Z FOR OF
-
-const arrays = [5, 8, 10, 23, 48, 60]
-
-for (const array of arrays) {
-	console.log(array / 5)
-}
-
-for (const array of arrays) {
-	if (array % 2 === 0) {
-		console.log(`%c liczba ${array} jest parzysta`, 'background-color:yellow')
-	} else {
-		console.log(`%c liczba ${array} jest nieparzysta`, 'background-color:tomato')
-	}
-}
+const newCars = cars.splice(2, 4, 'test')
+console.log(cars)
+console.log(newCars)

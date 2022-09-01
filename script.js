@@ -1,59 +1,84 @@
-// ARRAYS
+// Map vs forEach
 
-const numbers = [1, 2, 3, 4, 5]
-console.log(numbers)
+const numbers = [0, 1, 2, 3]
 
-numbers.unshift(-1, 0)
+const newNumbers = numbers.forEach(number => number * 2)
+console.log(newNumbers)
 
-console.log(numbers)
+const mapNumbers = numbers.map(number => number * 2)
+console.log(mapNumbers)
 
-numbers.shift()
-console.log(numbers)
+// Exercices
 
-// unshift - dodaje elementy na początku tablicy
-// shift - usuwa element z indeksem 0
+const letters = ['c', 'd']
+console.log(letters)
+letters.unshift('a', 'b')
+console.log(letters)
+letters.push('e', 'f')
+console.log(letters)
 
-const colors = ['red', 'blue', 'green']
-console.log(colors)
-colors.push('gold', 123)
-console.log(colors)
+console.log(letters.includes('c'))
 
-colors.pop()
-console.log(colors)
+// Exercice .2
 
-// push-dodaje elementy na końcu tablicy
-// pop - usuwa ostatni element z tablicy
+const arr = [1, 2, 3]
+const food = ['burger', 'pizza', 'pasta']
 
-// Metody
+const arr1 = [...arr, ...food]
+console.log(arr1)
 
-const nums = [1, 2, 3, 4, 5]
+// Exercice .3
 
-function multiply(x) {
-	return x * 2
+const arrays = [1, 5, 13, 26, 48]
+
+const arrays1 = arrays.map(array => array * 5)
+console.log(arrays1)
+
+for (const array of arrays1) {
+	if (array % 2 === 0) {
+		console.log(`liczba: ${array} jest parzysta`)
+	} else {
+		console.log(`liczba: ${array} jest nieparzysta`)
+	}
 }
 
-multiply(2)
+// for (let i = 0; i < arrays1.length; i++) {
+//     if (arrays[i]%2===0) {
+//     console.log(`liczba: ${arrays1[i]} jest parzysta` );
+// } else {
+//     console.log(`liczba: ${arrays1[i]} jest nieparzysta` );
+// }
+// }
 
-const newNums = nums.map(multiply)
-console.log(nums)
-console.log(newNums)
-console.log('============================');
-// EXERCICES
+// Exercice .4
 
-const numbers1 = [0, 0, 1, 1, 2, 2, 2]
-const colors1 = ['red', 'green', 'blue', true, 123]
-const cars = [123, true, 'audi', 'bmw', 'mercedes', 'ferrari', '🤷‍♂️', '👀']
+const color = ['red']
+color.unshift('blue')
+color.push('green')
+console.log(color)
 
-const numbers2 = numbers1.slice(0,2)
-console.log(numbers2)
+for (const colors of color) {
+	console.log(`mój ulubiony kolor to: ${colors.charAt(0).toUpperCase() + colors.slice(1)}`)
+}
 
-const numbers3 = numbers1.slice(-3)
-console.log(numbers3)
+// Exercice .5
 
-const randomStuff = colors1.splice(-2)
+const cars = 'Audi,Mercedes,BMW,Nissan,Dodge'
 
-console.log(randomStuff)
+const newCars = cars.split(',')
+console.log(newCars)
 
-const newCars = cars.splice(2, 4, 'test')
-console.log(cars)
+newCars.length > 3 ? console.log('jest ok') : console.log('nie jest ok')
+
+// if (newCars.length>3) {
+//     console.log('jest ok');
+// } else {
+//     console.log('nie jest ok');
+// }
+
+if (newCars.includes('Audi')) {
+	newCars.push('Honda')
+} else {
+	newCars.pop()
+}
 console.log(newCars)

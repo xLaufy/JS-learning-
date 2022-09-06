@@ -1,84 +1,57 @@
-// Map vs forEach
+// FUNCTIONS
 
-const numbers = [0, 1, 2, 3]
+// deklaracja funkcji
 
-const newNumbers = numbers.forEach(number => number * 2)
-console.log(newNumbers)
-
-const mapNumbers = numbers.map(number => number * 2)
-console.log(mapNumbers)
-
-// Exercices
-
-const letters = ['c', 'd']
-console.log(letters)
-letters.unshift('a', 'b')
-console.log(letters)
-letters.push('e', 'f')
-console.log(letters)
-
-console.log(letters.includes('c'))
-
-// Exercice .2
-
-const arr = [1, 2, 3]
-const food = ['burger', 'pizza', 'pasta']
-
-const arr1 = [...arr, ...food]
-console.log(arr1)
-
-// Exercice .3
-
-const arrays = [1, 5, 13, 26, 48]
-
-const arrays1 = arrays.map(array => array * 5)
-console.log(arrays1)
-
-for (const array of arrays1) {
-	if (array % 2 === 0) {
-		console.log(`liczba: ${array} jest parzysta`)
-	} else {
-		console.log(`liczba: ${array} jest nieparzysta`)
-	}
+function test() {
+	console.log('czesc')
 }
+test()
 
-// for (let i = 0; i < arrays1.length; i++) {
-//     if (arrays[i]%2===0) {
-//     console.log(`liczba: ${arrays1[i]} jest parzysta` );
-// } else {
-//     console.log(`liczba: ${arrays1[i]} jest nieparzysta` );
-// }
-// }
+// wyrazenie funkcyjne
 
-// Exercice .4
-
-const color = ['red']
-color.unshift('blue')
-color.push('green')
-console.log(color)
-
-for (const colors of color) {
-	console.log(`mój ulubiony kolor to: ${colors.charAt(0).toUpperCase() + colors.slice(1)}`)
+const helloWorld = function () {
+	console.log('czesc123')
 }
+helloWorld()
 
-// Exercice .5
+// funkcja z argumentami
 
-const cars = 'Audi,Mercedes,BMW,Nissan,Dodge'
-
-const newCars = cars.split(',')
-console.log(newCars)
-
-newCars.length > 3 ? console.log('jest ok') : console.log('nie jest ok')
-
-// if (newCars.length>3) {
-//     console.log('jest ok');
-// } else {
-//     console.log('nie jest ok');
-// }
-
-if (newCars.includes('Audi')) {
-	newCars.push('Honda')
-} else {
-	newCars.pop()
+function add(x, y) {
+	console.log(x + y)
 }
-console.log(newCars)
+add(1, 2)
+
+function names(name, age) {
+	console.log(`Cześć, mam na imię ${name} i mam ${age} lat`)
+}
+names('Miłosz', 30)
+
+// Funkcja strzałkowa
+
+const jadajada = (q, w) => {
+	console.log(q + w)
+}
+jadajada(2, 22)
+
+const qwerty = numerical => {
+	console.log('yolo ' + numerical)
+}
+qwerty(420)
+
+
+// Domyslny parametr funkcji 
+
+const hello = (name = 'drogi uzytkowniku') => {
+	console.log(`czesc ${name}, jak sie masz?`)
+}
+hello()
+hello('Jarek')
+
+
+// Operator REST
+
+const numbers = (x,y, ...z) => {
+    console.log(x,y,z);
+}
+numbers(13,234,674,3234,34664,42,4)
+

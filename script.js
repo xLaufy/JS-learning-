@@ -1,57 +1,68 @@
-// FUNCTIONS
+// foreach, map and callback
 
-// deklaracja funkcji
+const numbers = [0.5, 4, 'abc']
+const names = ['Lisa', 'Lily', 'Adam', 'Przemek']
 
-function test() {
-	console.log('czesc')
+numbers.forEach(num => console.log(num * num))
+
+const bigNames = names.map(name => name.toUpperCase())
+console.log(bigNames)
+
+// callback
+
+const showBigNames = name => {
+	console.log(name.toUpperCase())
 }
-test()
 
-// wyrazenie funkcyjne
+names.forEach(showBigNames)
 
-const helloWorld = function () {
-	console.log('czesc123')
+console.log('------------')
+
+// callback skrócony zapis
+
+names.forEach(el => console.log(el.toLocaleUpperCase()))
+
+// Exercise .1
+
+const add = (x, y) => {
+	const score = x + y
+	score % 2 === 0 ? fun1(score) : fun2(score)
 }
-helloWorld()
 
-// funkcja z argumentami
-
-function add(x, y) {
-	console.log(x + y)
+const fun1 = num => {
+	console.log(`liczba ${num} jest parzysta`)
 }
+const fun2 = num => {
+	console.log(`liczba ${num} jest nieparzysta`)
+}
+
 add(1, 2)
 
-function names(name, age) {
-	console.log(`Cześć, mam na imię ${name} i mam ${age} lat`)
+// Exercise .2
+
+let celsius
+let temp
+
+const fahrenheit = c => {
+	let celsius = c
+	temp = c * 1.8 + 32
+	console.log(`${c}C = ${temp}F`)
 }
-names('Miłosz', 30)
 
-// Funkcja strzałkowa
+fahrenheit(20)
 
-const jadajada = (q, w) => {
-	console.log(q + w)
+// Exercise
+
+const num = 10
+const nums = []
+
+for (let i = 0; i < num; i++) {
+	console.log(i)
+	nums.push(i)
 }
-jadajada(2, 22)
+console.log(nums)
 
-const qwerty = numerical => {
-	console.log('yolo ' + numerical)
+const fun = number => {
+	number % 3 === 0 && number !== 0 ? console.log(`${number} jest podzielne przez 3`) : console.log(`${number} nie jest podzielne przez 3`)
 }
-qwerty(420)
-
-
-// Domyslny parametr funkcji 
-
-const hello = (name = 'drogi uzytkowniku') => {
-	console.log(`czesc ${name}, jak sie masz?`)
-}
-hello()
-hello('Jarek')
-
-
-// Operator REST
-
-const numbers = (x,y, ...z) => {
-    console.log(x,y,z);
-}
-numbers(13,234,674,3234,34664,42,4)
-
+nums.forEach(fun)

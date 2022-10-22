@@ -1,48 +1,13 @@
-
-// exercises : 
-
-
+const btn = document.querySelector('button')
 const img = document.querySelector('img')
+const URL = 'https://dog.ceo/api/breeds/image/random'
 
 
-img.setAttribute('src', 'https://www.telepolis.pl/images/2022/06/mars-czerwona-planeta-eksploracja-badanie.jpg')
-img.setAttribute('alt', 'mars')
+btn.addEventListener('click', ()=> {
+fetch(URL)
+.then(res => res.json())
+.then(data => img.setAttribute('src', data.message))
+.catch(err => console.error(err))
 
 
-// ------------------------------------------
-
-const test = () => {
-    console.log('hey');
-}
-setTimeout(test, 2000)
-
-// druga opcja 
-
-setTimeout(() => {
-	console.log('hey')
-}, '2000')
-
-
-// ---------------------------------------------------
-
-const div = document.createElement('div')
-document.body.appendChild(div)
-div.setAttribute('class', 'wrapper')
-
-const ul = document.createElement('ul')
-div.appendChild(ul)
-
-
-
-for ( i=1 ; i <= 5 ; i++){
-    const li = document.createElement('li')
-    li.textContent = i
-    ul.appendChild(li)
-    li.dataset.id = i
-}
-
-
-const dataTag = document.querySelector('[data-id="3"]')
-
-
-console.log(dataTag.closest('.wrapper'));
+})
